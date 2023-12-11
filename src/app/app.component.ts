@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'course_project';
+  feature ='recipe';
+  showRecepies(){
+    this.feature = 'recipe';
+  }
+  showShoppingList(){
+    this.feature='shopping-list';
+  }
 }
