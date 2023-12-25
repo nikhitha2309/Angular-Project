@@ -9,12 +9,5 @@ import { Router } from '@angular/router';
 export class AppComponent {
   constructor(private router: Router){}
   title = 'course_project';
-  feature ='recipe';
-  showRecepies(){
-    //this.feature = 'recipe';
-    this.router.navigate(['/recipe'])
-  }
-  showShoppingList(){
-    this.feature='shopping-list';
-  }
+  
 }

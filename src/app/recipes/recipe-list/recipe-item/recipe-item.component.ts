@@ -20,8 +20,5 @@ export class RecipeItemComponent implements OnInit {
     this.recipe = this.recipeService.getRecipesByIndex(this.i);
   }
 
-  // onRecipeClick(){
-  //   this.router.navigate(['/recipes',this.i]);
-  //   //this.recipeService.recipeSelected.emit(this.recipe)
-  // }
+  
 }
