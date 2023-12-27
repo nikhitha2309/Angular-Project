@@ -5,6 +5,7 @@ import { Subject } from "rxjs";
 
 @Injectable()
 export class RecipeService{
+    recipesChanged = new Subject<Recipe[]>()
 
     private recipes: Recipe[] = [
         new Recipe("test Recipe1",'this a test recipe','https://www.budgetbytes.com/wp-content/uploads/2013/07/How-to-Calculate-Recipe-Costs-H.jpg',
@@ -18,5 +19,21 @@ export class RecipeService{
     }
     getRecipesByIndex(i: number){
         return this.recipes[i];
+    }
+
+    addRecipe(recipe: Recipe){
+        this.recipes.push(recipe);
+        this.recipesChanged.next(this.recipes.slice())
+    }
+    editRecipe(index:number,recipe:Recipe){
+        this.recipes[index] = recipe;
+        this.recipesChanged.next(this.recipes.slice())
+
+    }
+
+    deleteRecipe(index : number){
+        this.recipes.splice(index,1);
+        this.recipesChanged.next(this.recipes.slice())
+
     }
 }
